@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     usermane: '',
     password: ''
   }
-
+//simone
   redirectAfterLogin = ['/home'];
 
   constructor( private srvlogin: LoginService, private router: Router) { }
