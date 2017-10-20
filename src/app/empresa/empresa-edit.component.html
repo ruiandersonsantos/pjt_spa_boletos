@@ -1,3 +1,82 @@
-<p>
-  empresa-edit works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 ajustaTopoPaineis">
+
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Edição de Empresas</h4>
+        </div>
+        <div class="card-block">
+
+          <form class="form-horizontal" >
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="id">Id</label>
+                <input name="id" [(ngModel)]="empresa.id" type="text" class="form-control" id="id" disabled="" >
+              </div>
+            </div>
+
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="key_secret">Key_secret</label>
+                <input name="key_secret" [(ngModel)]="empresa.key_secret" type="text" class="form-control" id="key_secret" disabled="" >
+              </div>
+            </div>
+
+
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="razaoSocial">Razão Social</label>
+                <input name="razaoSocial" [(ngModel)]="empresa.razao_social" type="text" class="form-control" id="razaoSocial">
+              </div>
+            </div>
+
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="nomeFantasia">Nome Fantasia</label>
+                <input name="nomeFantasia" [(ngModel)]="empresa.nome_fantasia" type="text" class="form-control" id="nomeFantasia">
+              </div>
+            </div>
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="cnpj">CNPJ</label>
+                <input name="cnpj" [(ngModel)]="empresa.cnpj" type="text" class="form-control" id="cnpj">
+              </div>
+            </div>
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input name="endereco" [(ngModel)]="empresa.endereco" type="text" class="form-control" id="endereco">
+              </div>
+            </div>
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input name="telefone" [(ngModel)]="empresa.telefone" type="text" class="form-control" id="telefone">
+              </div>
+            </div>
+
+            <div class="ajustaLargura">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" [(ngModel)]="empresa.email" type="email" class="form-control" id="email">
+              </div>
+            </div>
+
+            <button (click)=salvar($event)  class="btn btn-secondary">Salvar</button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -36,7 +36,7 @@ export class BuilderRequestService {
 
           }).catch( error => {
             return Promise.reject(error);
-          });;
+          });
 
     };
 

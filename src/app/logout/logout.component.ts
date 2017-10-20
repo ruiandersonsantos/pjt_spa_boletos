@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LogoutComponent implements OnInit {
 
   percent: number = 0;
+
   redirectAfterLogin = ['/login'];
 
   constructor(private loginservice: LoginService, private router: Router) { }

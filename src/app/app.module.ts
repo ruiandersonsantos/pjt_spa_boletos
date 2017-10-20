@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { AuthGuardRouterService } from './resource/auth-guard-router.service';
 import { LogoutComponent } from './logout/logout.component';
 import {EmpresaService} from './resource/empresa.service';
 import {BuilderRequestService} from './resource/builder-request.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import {BuilderRequestService} from './resource/builder-request.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [  GlobalService,
                 LoginService,

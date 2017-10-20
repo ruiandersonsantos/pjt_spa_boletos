@@ -8,13 +8,19 @@ import { LoginService } from '../resource/login.service';
 })
 export class MenuComponent implements OnInit {
 
+  isCollapsed = true;
 
-  constructor( public login: LoginService) { }
+  constructor( public login: LoginService) {
+  }
 
 
   ngOnInit() {
 
+  }
 
+  toggleMenu() {
+
+    this.isCollapsed = !this.isCollapsed;
   }
 
 }

@@ -101,10 +101,11 @@ export class LoginService {
 
 
     private revokeToken() {
+        this.mostraMenu = false;
         this.jwtToken.token = null;
         this.jwtToken.refreshToken = null;
         this.localStorage.remove(USER_KEY);
-        this.mostraMenu = false;
+
     }
 
   private getUsuario(tokenDeAcesso){
