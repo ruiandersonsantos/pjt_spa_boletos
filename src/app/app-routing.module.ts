@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { EmpresaNewComponent } from './empresa/empresa-new.component';
 import { EmpresaEditComponent } from './empresa/empresa-edit.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuardRouterService } from './resource/auth-guard-router.service';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {
@@ -18,19 +20,28 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuardRouterService]
   },
   {
-    path: 'list',
-    component: EmpresaComponent
+    path: 'logout',
+    component: LogoutComponent,
+    canActivate: [AuthGuardRouterService]
   },
   {
-    path: 'novo',
-    component: EmpresaNewComponent
+    path: 'empresa',
+    component: EmpresaComponent,
+    canActivate: [AuthGuardRouterService]
   },
   {
-    path: 'editar',
-    component: EmpresaEditComponent
+    path: 'empresa/novo',
+    component: EmpresaNewComponent,
+    canActivate: [AuthGuardRouterService]
+  },
+  {
+    path: 'empresa/editar',
+    component: EmpresaEditComponent,
+    canActivate: [AuthGuardRouterService]
   },
 ];
 

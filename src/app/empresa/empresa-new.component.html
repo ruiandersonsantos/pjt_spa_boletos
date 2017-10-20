@@ -1,44 +1,62 @@
 <div class="container">
   <div class="row">
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Cadastro de Empresas</h3>
       </div>
       <div class="panel-body">
 
-        <div class="form-group">
-          <label for="razaoSocial">Razão Social</label>
-          <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
-        </div>
+        <form class="form-horizontal" >
 
-        <div class="form-group">
-          <label for="nomeFantasia">Nome Fantasia</label>
-          <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia">
-        </div>
+          <div class="ajustaLargura">
+            <div class="form-group">
+              <label for="razaoSocial">Razão Social</label>
+              <input name="razaoSocial" [(ngModel)]="empresa.razao_social" type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label for="cnpj">CNPJ</label>
-          <input type="text" class="form-control" id="cnpj" placeholder="CNPJ">
-        </div>
 
-        <div class="form-group">
-          <label for="endereco">Endereço</label>
-          <input type="text" class="form-control" id="endereco" placeholder="Endereço">
-        </div>
+          <div class="ajustaLargura">
+            <div class="form-group">
+              <label for="nomeFantasia">Nome Fantasia</label>
+              <input name="nomeFantasia" [(ngModel)]="empresa.nome_fantasia" type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia">
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="text" class="form-control" id="telefone" placeholder="Telefone">
-        </div>
+          <div class="ajustaLargura">
+            <div class="form-group">
+              <label for="cnpj">CNPJ</label>
+              <input name="cnpj" [(ngModel)]="empresa.cnpj" type="text" class="form-control" id="cnpj" placeholder="CNPJ">
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Email">
-        </div>
+          <div class="ajustaLargura">
+            <div class="form-group">
+              <label for="endereco">Endereço</label>
+              <input name="endereco" [(ngModel)]="empresa.endereco" type="text" class="form-control" id="endereco" placeholder="Endereço">
+            </div>
+          </div>
 
-        <button type="submit" class="btn btn-default">Cadastrar</button>
+          <div class="ajustaLargura">
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input name="telefone" [(ngModel)]="empresa.telefone" type="text" class="form-control" id="telefone" placeholder="Telefone">
+            </div>
+          </div>
+
+          <div class="ajustaLargura">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input name="email" [(ngModel)]="empresa.email" type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <button (click)=cadastrar($event)  class="btn btn-default">Cadastrar</button>
+
+        </form>
       </div>
     </div>
+
   </div>
 </div>
 

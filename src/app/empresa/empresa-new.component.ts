@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EmpresaService} from '../resource/empresa.service';
 
 @Component({
   selector: 'app-empresa-new',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpresaNewComponent implements OnInit {
 
-  constructor() { }
+
+  public empresa = {
+    razao_social: '',
+    nome_fantasia: '',
+    cnpj: '',
+    endereco: '',
+    telefone: '',
+    email: ''
+  };
+
+  constructor(private empresaservice: EmpresaService) { }
 
   ngOnInit() {
+  }
+
+  cadastrar(e){
+
+   e.preventDefault();
+
+   this.empresaservice.salvar(this.empresa)
+       .then( response => {
+         console.log('componente');
+         console.log(response);
+
+   }).catch(error => {
+
+     console.log(error);
+   });
   }
 
 }

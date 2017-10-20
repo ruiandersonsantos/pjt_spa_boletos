@@ -4,6 +4,10 @@ import {LocalstorageService} from './localstorage.service';
 const TOKEN_KEY = 'token';
 const REFRESH_TOKEN_KEY = 'refresh_token';
 
+/*
+Classe responsavel pelas opreações com o token.
+ */
+
 @Injectable()
 export class JwtTokenService {
 

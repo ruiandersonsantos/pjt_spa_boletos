@@ -14,15 +14,31 @@
       <a class="navbar-brand" routerLink="">Pjt Spa Gestor</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="app-navbar-collapse">
+    <div *ngIf="login.mostraMenu" class="collapse navbar-collapse" id="app-navbar-collapse">
       <!-- Left Side Of Navbar -->
       <ul class="nav navbar-nav">
           <li routerLinkActive="active">
             <a routerLink="/home">Home</a>
           </li>
         <li>
-            <a routerLink="/list">Empresa</a>
+            <a routerLink="/empresa">Empresa</a>
           </li>
+      </ul>
+
+      <!-- Right Side Of Navbar -->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" dropdown>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+             dropdownToggle>
+            {{ login.objUsuarioLogado.name }} <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu" dropdownMenu>
+            <li>
+              <a routerLink="/logout">Logout</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

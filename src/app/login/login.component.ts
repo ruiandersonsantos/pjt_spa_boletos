@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../resource/login.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +14,9 @@ export class LoginComponent implements OnInit {
     usermane: '',
     password: ''
   }
-//simone
+
+  public msgError: string = '';
+
   redirectAfterLogin = ['/home'];
 
   constructor( private srvlogin: LoginService, private router: Router) { }
@@ -25,7 +28,10 @@ export class LoginComponent implements OnInit {
     this.srvlogin.login(this.objUser.usermane, this.objUser.password)
         .then(obj =>{
           this.router.navigate(this.redirectAfterLogin);
-        });
+        }).catch( response => {
+
+          this.msgError = response.json().message;
+    });
   }
 
 }

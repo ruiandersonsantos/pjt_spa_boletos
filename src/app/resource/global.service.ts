@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
 
+/*
+Classe responsavel pelos serviços globais da aplicação.
+ */
+
 @Injectable()
 export class GlobalService {
 
@@ -28,6 +32,22 @@ export class GlobalService {
 
   getGrantType(){
     return environment.grant_type;
+  }
+
+  getVerboGET(){
+    return environment.verbo_get;
+  }
+
+  getVerboPOST(){
+    return environment.verbo_post;
+  }
+
+  getVerboPUT(){
+    return environment.verbo_put;
+  }
+
+  getVerboDELETE(){
+    return environment.verbo_delete;
   }
 }
 

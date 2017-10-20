@@ -5,5 +5,9 @@ export const environment = {
   urlLogout: 'http://www.apiboleto.dtconsultoria.com.br/oauth/revoke_token',
   client_Secret: 'q58YB7pBYRiRsO4q4nGJXAFXCCaTkHf4t4K9fdPK',
   client_id: 2,
-  grant_type: 'password'
+  grant_type: 'password',
+  verbo_get: 'GET',
+  verbo_post: 'POST',
+  verbo_put: 'PUT',
+  verbo_delete: 'DELETE',
 };

@@ -16,6 +16,10 @@ import { GlobalService } from './resource/global.service';
 import { LoginService } from './resource/login.service';
 import { LocalstorageService } from './resource/localstorage.service';
 import { JwtTokenService } from './resource/jwt-token.service';
+import { AuthGuardRouterService } from './resource/auth-guard-router.service';
+import { LogoutComponent } from './logout/logout.component';
+import {EmpresaService} from './resource/empresa.service';
+import {BuilderRequestService} from './resource/builder-request.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { JwtTokenService } from './resource/jwt-token.service';
     HomeComponent,
     EmpresaNewComponent,
     EmpresaEditComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,14 @@ import { JwtTokenService } from './resource/jwt-token.service';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [GlobalService, LoginService, LocalstorageService, JwtTokenService],
+  providers: [  GlobalService,
+                LoginService,
+                LocalstorageService,
+                JwtTokenService,
+                AuthGuardRouterService,
+                EmpresaService,
+                BuilderRequestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
