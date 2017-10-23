@@ -21,6 +21,9 @@ import { LogoutComponent } from './logout/logout.component';
 import {EmpresaService} from './resource/empresa.service';
 import {BuilderRequestService} from './resource/builder-request.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+import { PainelComponent } from './painel/painel.component';
+import { MsgAlertComponent } from './msg-alert/msg-alert.component';
+import {MsgAlertaService} from './resource/msg-alerta.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
     EmpresaNewComponent,
     EmpresaEditComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    PainelComponent,
+    MsgAlertComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +46,16 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],
-  providers: [  GlobalService,
-                LoginService,
-                LocalstorageService,
-                JwtTokenService,
-                AuthGuardRouterService,
-                EmpresaService,
-                BuilderRequestService
+  providers: [
+
+      GlobalService,
+      LoginService,
+      LocalstorageService,
+      JwtTokenService,
+      AuthGuardRouterService,
+      EmpresaService,
+      BuilderRequestService,
+      MsgAlertaService
   ],
   bootstrap: [AppComponent]
 })

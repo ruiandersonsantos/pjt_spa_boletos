@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PainelModel } from '../model/painel.model';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+
+  painel: PainelModel = new PainelModel(
+
+      'building-o',
+      'Home',
+      'sem-rota',
+      'painel_id_home',
+      'sem-botao',
+      true
+  );
 
   ngOnInit() {
   }

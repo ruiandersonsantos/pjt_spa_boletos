@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {EmpresaService} from '../resource/empresa.service';
 import {ActivatedRoute, Router} from '@angular/router';
-
+import { PainelModel } from './../model/painel.model';
+import {MsgAlertModel} from '../model/msg-alert.model';
+import {MsgAlertaService} from '../resource/msg-alerta.service';
 
 @Component({
   selector: 'app-empresa',
@@ -13,25 +15,63 @@ export class EmpresaComponent implements OnInit {
   empresas: [''];
   public razao_social;
 
-  constructor(private empresaservice: EmpresaService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  mensagem: MsgAlertModel;
+
+  painel: PainelModel = new PainelModel(
+
+      'building-o',
+      'Listagem de Empresa',
+      '/empresa/novo',
+      'painel_id_empresas',
+      'Nova Empresa',
+      true
+  );
+
+
+  constructor(
+      private empresaservice: EmpresaService,
+      private router: Router,
+      private msgalert: MsgAlertaService,
+      private activatedRoute: ActivatedRoute
+
+
+  ) {
+
+
+  }
 
   ngOnInit() {
-    this.getEmpresas();
+    this.mensagem = new MsgAlertModel();
+     this.getEmpresas();
 
-    this.razao_social = this.activatedRoute.snapshot.queryParams['razao_social'];
+
   }
 
   getEmpresas(){
     this.empresaservice.buscarEmpresas().then( response => {
       this.empresas = response.json();
+
+      this.montaMensagem();
+
+
+      console.log(this.mensagem);
     }).catch( error => {
 
     })
   }
 
+
+
   editar(e, empresa){
     e.preventDefault();
     this.router.navigate(['empresa/editar'], {queryParams: empresa});
+  }
+
+  private montaMensagem() {
+    this.mensagem.exibirmsg = this.activatedRoute.snapshot.queryParams['exibirmsg'];
+    this.mensagem.tipo = this.activatedRoute.snapshot.queryParams['tipo'];
+    this.mensagem.conteudo = this.activatedRoute.snapshot.queryParams['conteudo'];
+    this.mensagem.textoDestaque = this.activatedRoute.snapshot.queryParams['textoDestaque'];
   }
 
 }

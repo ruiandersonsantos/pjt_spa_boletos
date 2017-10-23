@@ -1,57 +1,37 @@
-<div class="container">
-    <div class="row">
+<app-msg-alert [mensagem]="mensagem"></app-msg-alert>
+<app-painel [painel]="painel">
 
-        <div class="col-md-12 ajustaTopoPaineis" *ngIf="razao_social">
-            <ngb-alert [dismissible]="false" type="success">
-                <strong>Cadastro {{ razao_social }}</strong> atualizado com sucesso.
-            </ngb-alert>
-        </div>
 
-        <div class="card ajustaTopoPaineis">
-            <div class="card-header">
-                <h3 class="card-title">
-                    <ng4-fa name="building-o"> </ng4-fa>&nbsp;&nbsp;Empresas
-                </h3>
-            </div>
 
-            <div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Razão Social</th>
+            <th>CNPJ</th>
+            <th>E-mail</th>
+            <th>Key Secret</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let empresa of empresas">
+            <td>{{ empresa.id}}</td>
+            <td>{{ empresa.razao_social }}</td>
+            <td>{{ empresa.cnpj }}</td>
+            <td>{{ empresa.email }}</td>
+            <td>{{ empresa.key_secret }}</td>
+            <td>
 
-                <a class="btn btn-outline-info btn_novo" routerLink="/empresa/novo"  id="btn_novo_empresa">
-                    <ng4-fa name="plus"> </ng4-fa>&nbsp;&nbsp;Novo
+                <a (click)="editar($event,empresa)" href="#" class="btn btn-outline-warning" id="btn_editar_empresa">
+                    <ng4-fa name="pencil-square-o"> </ng4-fa>&nbsp;&nbsp;Editar
                 </a>
 
-            </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
-            <div class="card-block">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Razão Social</th>
-                        <th>CNPJ</th>
-                        <th>E-mail</th>
-                        <th>Key Secret</th>
-                        <th>Ações</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let empresa of empresas">
-                        <td>{{ empresa.id}}</td>
-                        <td>{{ empresa.razao_social }}</td>
-                        <td>{{ empresa.cnpj }}</td>
-                        <td>{{ empresa.email }}</td>
-                        <td>{{ empresa.key_secret }}</td>
-                        <td>
+</app-painel>
 
-                            <a (click)="editar($event,empresa)" href="#" class="btn btn-outline-warning" id="btn_editar_empresa">
-                                <ng4-fa name="pencil-square-o"> </ng4-fa>&nbsp;&nbsp;Editar
-                            </a>
 
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>

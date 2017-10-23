@@ -3,12 +3,20 @@
 
 
 .btn_novo {
-    margin-top: 10px;
+    margin-bottom: 15px;
 
 }
 
-.ajustaTopoPaineis{
-    top: 30px;
+.ajustaPainel{
+    top: 10px;
+
+}
+
+.ajustaMensagem{
+    top: 15px;
+    bottom: 0;
+    padding-bottom: 0;
+
 }
 
 

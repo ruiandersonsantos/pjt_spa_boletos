@@ -1,16 +1,21 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { GlobalService } from './global.service';
 import 'rxjs/add/operator/toPromise';
 import { BuilderRequestService } from './builder-request.service';
+import {MsgAlertModel} from "../model/msg-alert.model";
+import {MsgAlertaService} from "./msg-alerta.service";
 
 @Injectable()
 export class EmpresaService {
 
   private objempresa: any;
 
+
+
   constructor(
       private servicosGlobais: GlobalService,
       private builderservice: BuilderRequestService,
+      private msgservice: MsgAlertaService,
 
   ) { }
 
@@ -21,6 +26,8 @@ export class EmpresaService {
 
     return this.builderservice.builder('/empresas', this.servicosGlobais.getVerboPOST(), this.objempresa)
         .then( response => {
+            let alerta = this.msgservice.getAlerta(1, response.json().razao_social, ' cadastrada com sucesso.');
+            this.msgservice.emitirMensagemNaTela(alerta);
       return response;
 
     })

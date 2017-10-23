@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { EmpresaService } from '../resource/empresa.service';
+import {PainelModel} from '../model/painel.model';
+import {MsgAlertModel} from "../model/msg-alert.model";
+import {MsgAlertaService} from "../resource/msg-alerta.service";
 
 @Component({
   selector: 'app-empresa-edit',
@@ -11,12 +14,26 @@ export class EmpresaEditComponent implements OnInit {
 
   public empresa;
   private id;
-  constructor(private activatedRoute: ActivatedRoute, private empresaservice: EmpresaService, private router: Router) {
+
+  mensagem: MsgAlertModel;
+
+  painel: PainelModel = new PainelModel(
+
+      'building-o',
+      'Editando de Empresa',
+      'sem-rota',
+      'painel_id_empresa_cadastro',
+      'sem-botao',
+      false
+  );
+
+
+  constructor(private activatedRoute: ActivatedRoute, private empresaservice: EmpresaService, private router: Router, private msgservice: MsgAlertaService,) {
     this.empresa = {};
     this.id = this.activatedRoute.snapshot.queryParams['id'];
   }
   ngOnInit() {
-
+    this.mensagem = new MsgAlertModel();
     this.carregarEmpresa();
 
   }
@@ -26,7 +43,10 @@ export class EmpresaEditComponent implements OnInit {
     if(this.empresa){
 
       this.empresaservice.atualizar(this.empresa).then(response => {
-        this.router.navigate(['empresa'], {queryParams: response.json() });
+
+        let msg = this.msgservice.getAlerta(1,'Empresa ' + response.json().razao_social,' atualizada com sucesso.');
+        this.router.navigate(['empresa'], {queryParams: msg });
+
       }).catch(error => {
         console.log(error);
       })
@@ -40,7 +60,7 @@ export class EmpresaEditComponent implements OnInit {
     this.empresaservice.buscarEmpresaPorID(this.id).then( response => {
       this.empresa = response.json();
     }).catch( error => {
-      // mensagem de error no carregamento da empresa
+      this.mensagem = this.msgservice.getAlerta(2, 'Error ', ' error ao atualizar empresa.');
     })
   }
 

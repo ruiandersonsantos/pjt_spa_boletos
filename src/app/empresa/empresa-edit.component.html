@@ -1,12 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 ajustaTopoPaineis">
-
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Edição de Empresas</h4>
-        </div>
-        <div class="card-block">
+<app-painel [painel]="painel">
 
           <form class="form-horizontal" >
 
@@ -73,10 +65,4 @@
             <button (click)=salvar($event)  class="btn btn-secondary">Salvar</button>
 
           </form>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
+</app-painel>

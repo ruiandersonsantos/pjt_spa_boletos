@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuardRouterService } from './resource/auth-guard-router.service';
 import { LogoutComponent } from './logout/logout.component';
 
+
 const routes: Routes = [
   {
     path: '',
