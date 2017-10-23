@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12 ajustaMensagem ">
+
+
+
+      <div class="card ajustaPainel">
+        <div class="card-header">
+          <h3 class="card-title">
+            <ng4-fa [name]="painel.icone"> </ng4-fa>&nbsp;&nbsp;{{ painel.titulo }}
+          </h3>
+        </div>
+
+        <div class="card-block">
+
+          <a *ngIf="painel.mostraBotaoNovo"
+             class="btn btn-outline-info btn_novo"
+             [routerLink]="painel.rota_botao"
+             [id]="painel.id_botao">
+            <ng4-fa name="plus"> </ng4-fa>&nbsp;{{ painel.nome_botao }}
+          </a>
+
+          <ng-content></ng-content>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

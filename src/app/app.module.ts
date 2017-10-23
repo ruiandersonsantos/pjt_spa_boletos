@@ -24,6 +24,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { PainelComponent } from './painel/painel.component';
 import { MsgAlertComponent } from './msg-alert/msg-alert.component';
 import {MsgAlertaService} from './resource/msg-alerta.service';
+import { MenuService } from './resource/menu.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {MsgAlertaService} from './resource/msg-alerta.service';
       AuthGuardRouterService,
       EmpresaService,
       BuilderRequestService,
-      MsgAlertaService
+      MsgAlertaService,
+      MenuService
   ],
   bootstrap: [AppComponent]
 })

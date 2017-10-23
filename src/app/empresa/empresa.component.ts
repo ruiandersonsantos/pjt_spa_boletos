@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { PainelModel } from './../model/painel.model';
 import {MsgAlertModel} from '../model/msg-alert.model';
 import {MsgAlertaService} from '../resource/msg-alerta.service';
+import {MenuService} from "../resource/menu.service";
 
 @Component({
   selector: 'app-empresa',
@@ -32,7 +33,8 @@ export class EmpresaComponent implements OnInit {
       private empresaservice: EmpresaService,
       private router: Router,
       private msgalert: MsgAlertaService,
-      private activatedRoute: ActivatedRoute
+      private activatedRoute: ActivatedRoute,
+      public menuservice: MenuService
 
 
   ) {
@@ -41,8 +43,15 @@ export class EmpresaComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.menuservice.listarEmpresa.subscribe( empresas => {
+      this.empresas = empresas;
+
+      console.log(this.empresas);
+    });
+
     this.mensagem = new MsgAlertModel();
-     this.getEmpresas();
+      this.getEmpresas();
 
 
   }
@@ -50,11 +59,8 @@ export class EmpresaComponent implements OnInit {
   getEmpresas(){
     this.empresaservice.buscarEmpresas().then( response => {
       this.empresas = response.json();
-
       this.montaMensagem();
 
-
-      console.log(this.mensagem);
     }).catch( error => {
 
     })

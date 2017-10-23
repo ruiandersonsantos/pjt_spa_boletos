@@ -2,8 +2,8 @@ import {EventEmitter, Injectable} from '@angular/core';
 import { GlobalService } from './global.service';
 import 'rxjs/add/operator/toPromise';
 import { BuilderRequestService } from './builder-request.service';
-import {MsgAlertModel} from "../model/msg-alert.model";
-import {MsgAlertaService} from "./msg-alerta.service";
+
+import {MsgAlertaService} from './msg-alerta.service';
 
 @Injectable()
 export class EmpresaService {

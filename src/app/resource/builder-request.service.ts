@@ -27,7 +27,7 @@ export class BuilderRequestService {
 
 
     if( this.srvGlobal.getVerboGET() === verboHttp){
-
+        console.log(this.headers);
       return this.http.get(this.srvGlobal.getUrlBase() + rota, { headers: this.headers })
           .toPromise()
           .then( response => {
