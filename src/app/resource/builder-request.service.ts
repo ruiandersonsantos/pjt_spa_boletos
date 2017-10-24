@@ -17,17 +17,19 @@ export class BuilderRequestService {
         private srvGlobal: GlobalService
   ) {
 
-    this.token = this.jwtToken.token;
+
   }
 
   builder(rota: string, verboHttp: string, obj: any): Promise<any>{
+
+    this.token = this.jwtToken.token;
 
     this.headers = new Headers({'Authorization': 'Bearer ' + this.token});
     this. headers.set('Content-Type', 'application/json');
 
 
     if( this.srvGlobal.getVerboGET() === verboHttp){
-        console.log(this.headers);
+
       return this.http.get(this.srvGlobal.getUrlBase() + rota, { headers: this.headers })
           .toPromise()
           .then( response => {

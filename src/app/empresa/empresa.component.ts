@@ -38,17 +38,15 @@ export class EmpresaComponent implements OnInit {
 
 
   ) {
+      this.menuservice.listarObjetos.subscribe( empresas => {
+        this.empresas = empresas;
 
+        console.log(this.empresas);
+      });
 
   }
 
   ngOnInit() {
-
-    this.menuservice.listarObjetos.subscribe( empresas => {
-      this.empresas = empresas;
-
-      console.log(this.empresas);
-    });
 
     this.mensagem = new MsgAlertModel();
       this.getEmpresas();

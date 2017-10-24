@@ -25,6 +25,7 @@ export class MenuService {
   }
 
   getHomeaMenu() {
+
    this.listarObjetos.emit('Entrou no Home');
 
     return true;
