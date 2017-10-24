@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PainelModel } from '../model/painel.model';
+import { MenuService } from '../resource/menu.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { PainelModel } from '../model/painel.model';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( public menuservice: MenuService ) { }
 
   painel: PainelModel = new PainelModel(
 
@@ -21,6 +22,10 @@ export class HomeComponent implements OnInit {
   );
 
   ngOnInit() {
+
+    this.menuservice.listarObjetos.subscribe( texto => {
+      console.log(texto);
+    });
   }
 
 }

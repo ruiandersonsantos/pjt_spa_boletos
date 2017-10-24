@@ -7,7 +7,7 @@ export class MenuService {
 
   constructor(private empresaservice: EmpresaService ) { }
 
-  listarEmpresa = new EventEmitter<any>();
+  listarObjetos = new EventEmitter<any>();
 
   empresas: [''];
 
@@ -15,7 +15,7 @@ export class MenuService {
     return this.empresaservice.buscarEmpresas().then( response => {
       this.empresas = response.json();
 
-      this.listarEmpresa.emit(this.empresas);
+      this.listarObjetos.emit(this.empresas);
 
       return this.empresas;
 
@@ -23,5 +23,12 @@ export class MenuService {
         return Promise.reject(error);
     });
   }
+
+  getHomeaMenu() {
+   this.listarObjetos.emit('Entrou no Home');
+
+    return true;
+  }
+
 
 }

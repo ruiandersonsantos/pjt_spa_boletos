@@ -44,7 +44,7 @@ export class EmpresaComponent implements OnInit {
 
   ngOnInit() {
 
-    this.menuservice.listarEmpresa.subscribe( empresas => {
+    this.menuservice.listarObjetos.subscribe( empresas => {
       this.empresas = empresas;
 
       console.log(this.empresas);

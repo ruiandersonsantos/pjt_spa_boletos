@@ -19,11 +19,11 @@
     <ul class="navbar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home" >Home </a>
+        <a class="nav-link" style="cursor:pointer" (click)="clicouHome()" >Home </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" (click)="clicouEmpresas()" >Empresa</a>
+        <a class="nav-link" style="cursor:pointer" (click)="clicouEmpresas()" >Empresa</a>
       </li>
 
     </ul>
@@ -31,7 +31,7 @@
 
 
     <div class="nav-item dropdown" ngbDropdown>
-      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" ngbDropdownToggle>
+      <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" ngbDropdownToggle>
         {{ login.objUsuarioLogado.name }}
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
