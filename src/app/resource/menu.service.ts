@@ -16,6 +16,7 @@ export class MenuService {
     return this.empresaservice.buscarEmpresas().then( response => {
       this.empresas = response.json();
 
+      // chamada statica
       MenuService.listarEmpresas.emit(this.empresas);
 
       return this.empresas;
