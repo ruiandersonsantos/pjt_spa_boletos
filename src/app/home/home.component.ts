@@ -10,9 +10,7 @@ import { MenuService } from '../resource/menu.service';
 export class HomeComponent implements OnInit {
 
   constructor( public menuservice: MenuService ) {
-    this.menuservice.listarObjetos.subscribe( texto => {
-      console.log(texto);
-    });
+
   }
 
   painel: PainelModel = new PainelModel(
@@ -26,7 +24,9 @@ export class HomeComponent implements OnInit {
   );
 
   ngOnInit() {
-
+    MenuService.listarHome.subscribe( texto => {
+      console.log(texto);
+    });
 
   }
 

@@ -27,16 +27,18 @@ export class MenuComponent implements OnInit {
   }
 
   clicouHome(){
-    this.menuservice.getHomeaMenu();
-    this.router.navigate(['home']);
+    this.menuservice.getHomeaMenu().then( resp =>{
+      this.router.navigate(['home']);
+    });
+
   }
 
   clicouEmpresas(){
     this.menuservice.getEmpresaMenu()
         .then(response => {
-          setInterval(() => {
+
             this.router.navigate(['empresa']);
-          },400);
+
 
         }).catch( error => {
       // colocar msg de erro na tela
