@@ -19,7 +19,7 @@ export class EmpresaEditComponent implements OnInit {
 
   painel: PainelModel = new PainelModel(
 
-      'building-o',
+      'pencil-square-o',
       'Editando de Empresa',
       'sem-rota',
       'painel_id_empresa_cadastro',

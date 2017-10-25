@@ -20,7 +20,7 @@ export class EmpresaComponent implements OnInit {
 
   painel: PainelModel = new PainelModel(
 
-      'building-o',
+      'list-alt',
       'Listagem de Empresa',
       '/empresa/novo',
       'painel_id_empresas',
