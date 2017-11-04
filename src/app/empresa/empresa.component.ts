@@ -1,10 +1,9 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EmpresaService} from '../resource/empresa.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import { PainelModel } from './../model/painel.model';
 import {MsgAlertModel} from '../model/msg-alert.model';
-import {MsgAlertaService} from '../resource/msg-alerta.service';
-import {MenuService} from "../resource/menu.service";
+import {MenuService} from '../resource/menu.service';
 
 @Component({
   selector: 'app-empresa',
@@ -19,7 +18,6 @@ export class EmpresaComponent implements OnInit {
   mensagem: MsgAlertModel;
 
   painel: PainelModel = new PainelModel(
-
       'list-alt',
       'Listagem de Empresa',
       '/empresa/novo',
@@ -32,9 +30,8 @@ export class EmpresaComponent implements OnInit {
   constructor(
       private empresaservice: EmpresaService,
       private router: Router,
-      private msgalert: MsgAlertaService,
-      private activatedRoute: ActivatedRoute,
-      public menuservice: MenuService
+      private activatedRoute: ActivatedRoute
+
 
 
   ) {

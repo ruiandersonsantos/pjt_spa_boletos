@@ -1,6 +1,6 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit } from '@angular/core';
 import {PainelModel} from '../model/painel.model';
-import {MsgAlertModel} from "../model/msg-alert.model";
+
 
 @Component({
   selector: 'app-painel',
