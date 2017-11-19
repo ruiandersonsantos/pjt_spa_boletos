@@ -1,34 +1,36 @@
 <app-msg-alert [mensagem]="mensagem"></app-msg-alert>
 <app-painel [painel]="painel">
 
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Razão Social</th>
-            <th>CNPJ</th>
-            <th>E-mail</th>
-            <th>Key Secret</th>
-            <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let empresa of empresas">
-            <td>{{ empresa.id}}</td>
-            <td>{{ empresa.razao_social }}</td>
-            <td>{{ empresa.cnpj }}</td>
-            <td>{{ empresa.email }}</td>
-            <td>{{ empresa.key_secret }}</td>
-            <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Razão Social</th>
+                <th>CNPJ</th>
+                <th>E-mail</th>
+                <th>Key Secret</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let empresa of empresas">
+                <td>{{ empresa.id}}</td>
+                <td>{{ empresa.razao_social }}</td>
+                <td>{{ empresa.cnpj }}</td>
+                <td>{{ empresa.email }}</td>
+                <td>{{ empresa.key_secret }}</td>
+                <td>
 
-                <a (click)="editar($event,empresa)" href="#" class="btn btn-outline-warning" id="btn_editar_empresa">
-                    <ng4-fa name="pencil-square-o"> </ng4-fa>&nbsp;&nbsp;Editar
-                </a>
+                    <a (click)="editar($event,empresa)" href="#" class="btn btn-outline-warning" id="btn_editar_empresa">
+                        <ng4-fa name="pencil-square-o"> </ng4-fa>&nbsp;&nbsp;Editar
+                    </a>
 
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
 </app-painel>
 
