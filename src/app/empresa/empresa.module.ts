@@ -7,17 +7,18 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {PainelModule} from '../painel/painel.module';
 import {MsgAlertModule} from '../msg-alert/msg-alert.module';
-import {AngularFontAwesomeModule} from 'angular-font-awesome';
+
 import {FormsModule} from '@angular/forms';
 import {EmpresaService} from '../resource/empresa.service';
 
 @NgModule({
   imports: [
+
     CommonModule,
     PainelModule,
     MsgAlertModule,
     NgbModule.forRoot(),
-    AngularFontAwesomeModule,
+
     FormsModule
   ],
   declarations: [
@@ -25,6 +26,7 @@ import {EmpresaService} from '../resource/empresa.service';
     EmpresaComponent,
     EmpresaNewComponent,
     EmpresaEditComponent,
+
   ],
   providers: [
     EmpresaService

@@ -1,13 +1,15 @@
+
 <div class="container">
   <div class="row">
 
     <div class="col-md-12 ajustaMensagem ">
 
       <div class="card ajustaPainel">
-        <div class="card-header">
-          <h6 class="card-title">
-            <ng4-fa [name]="painel.icone"> </ng4-fa>&nbsp;&nbsp;{{ painel.titulo }}
-          </h6>
+        <div class="card-header success">
+          <h5 class="card-title">
+            <i [class]="painel.icone" aria-hidden="true">&nbsp;</i>{{ painel.titulo }}
+
+          </h5>
         </div>
 
         <div class="card-block">
@@ -16,7 +18,7 @@
              class="btn btn-outline-info btn_novo"
              [routerLink]="painel.rota_botao"
              [id]="painel.id_botao">
-            <ng4-fa name="plus"> </ng4-fa>&nbsp;{{ painel.nome_botao }}
+            <i class="fa fa-plus" aria-hidden="true">&nbsp;</i>{{painel.nome_botao }}
           </a>
 
           <ng-content></ng-content>

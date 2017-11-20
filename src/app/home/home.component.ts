@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   painel: PainelModel = new PainelModel(
 
-      'home',
+      'fa fa-home',
       'Home',
       'sem-rota',
       'painel_id_home',

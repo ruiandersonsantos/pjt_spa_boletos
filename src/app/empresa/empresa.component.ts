@@ -18,7 +18,7 @@ export class EmpresaComponent implements OnInit {
   mensagem: MsgAlertModel;
 
   painel: PainelModel = new PainelModel(
-      'list-alt',
+      'fa fa-list-alt',
       'Listagem de Empresa',
       '/empresa/novo',
       'painel_id_empresas',

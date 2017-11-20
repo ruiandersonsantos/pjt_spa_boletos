@@ -20,10 +20,10 @@ import { LogoutComponent } from './logout/logout.component';
 
 import {BuilderRequestService} from './resource/builder-request.service';
 
-
 import {MenuModule} from './menu/menu.module';
 import {PainelModule} from './painel/painel.module';
 import {EmpresaModule} from './empresa/empresa.module';
+
 
 
 @NgModule({
@@ -32,6 +32,7 @@ import {EmpresaModule} from './empresa/empresa.module';
         HomeComponent,
         LoginComponent,
         LogoutComponent,
+
 
 
     ],
@@ -47,6 +48,7 @@ import {EmpresaModule} from './empresa/empresa.module';
         MenuModule,
 
     ],
+
     providers: [
 
         GlobalService,
