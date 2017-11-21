@@ -23,6 +23,8 @@ import {BuilderRequestService} from './resource/builder-request.service';
 import {MenuModule} from './menu/menu.module';
 import {PainelModule} from './painel/painel.module';
 import {EmpresaModule} from './empresa/empresa.module';
+import {UsuarioModule} from './usuario/usuario.module';
+
 
 
 
@@ -32,8 +34,6 @@ import {EmpresaModule} from './empresa/empresa.module';
         HomeComponent,
         LoginComponent,
         LogoutComponent,
-
-
 
     ],
     imports: [
@@ -46,6 +46,7 @@ import {EmpresaModule} from './empresa/empresa.module';
         EmpresaModule,
         PainelModule,
         MenuModule,
+        UsuarioModule
 
     ],
 

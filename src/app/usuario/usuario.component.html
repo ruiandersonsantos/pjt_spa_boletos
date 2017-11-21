@@ -1,0 +1,34 @@
+<app-msg-alert [mensagem]="mensagem"></app-msg-alert>
+<app-painel [painel]="painel">
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Key Secret</th>
+        <th>Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.id}}</td>
+        <td>{{ usuario.name }}</td>
+
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.cia_secret }}</td>
+        <td>
+
+          <a (click)="editar($event,usuario)" href="#" class="btn btn-outline-warning" id="btn_editar_usuario">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Editar
+          </a>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</app-painel>

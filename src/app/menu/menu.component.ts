@@ -47,4 +47,18 @@ export class MenuComponent implements OnInit {
 
   }
 
+  clicouUsuarios(){
+    this.menuservice.getEmpresaMenu()
+        .then(response => {
+
+          this.router.navigate(['usuario']);
+
+
+        }).catch( error => {
+      // colocar msg de erro na tela
+    });
+
+
+  }
+
 }

@@ -7,6 +7,7 @@ import { EmpresaEditComponent } from './empresa/empresa-edit.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardRouterService } from './resource/auth-guard-router.service';
 import { LogoutComponent } from './logout/logout.component';
+import {UsuarioComponent} from './usuario/usuario.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path: 'empresa/editar',
     component: EmpresaEditComponent,
+    canActivate: [AuthGuardRouterService]
+  },
+  {
+    path: 'usuario',
+    component: UsuarioComponent,
     canActivate: [AuthGuardRouterService]
   },
 
