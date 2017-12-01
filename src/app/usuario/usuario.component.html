@@ -9,6 +9,8 @@
         <th>Nome</th>
         <th>E-mail</th>
         <th>Key Secret</th>
+        <th>Nível</th>
+        <th>Status</th>
         <th>Ações</th>
       </tr>
       </thead>
@@ -19,6 +21,8 @@
 
         <td>{{ usuario.email }}</td>
         <td>{{ usuario.cia_secret }}</td>
+        <td>{{ usuario.nivel }}</td>
+        <td>{{ usuario.status }}</td>
         <td>
 
           <a (click)="editar($event,usuario)" href="#" class="btn btn-outline-warning" id="btn_editar_usuario">
