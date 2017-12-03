@@ -1,13 +1,16 @@
 export const environment = {
   production: true,
-  urlBase: 'http://www.apiboleto.dtconsultoria.com.br/api',
-  urlLogin: 'http://www.apiboleto.dtconsultoria.com.br/oauth/token',
-  urlLogout: 'http://www.apiboleto.dtconsultoria.com.br/oauth/revoke_token',
-  client_Secret: '1ryiHppFNmshqDO4bFEt6Wg0C2kpSXGugppFHNpa',
+
+   urlBase: 'http://www.apiboleto.dtconsultoria.com.br/api',
+   urlLogin: 'http://www.apiboleto.dtconsultoria.com.br/oauth/token',
+   urlLogout: 'http://www.apiboleto.dtconsultoria.com.br/oauth/revoke_token',
+   client_Secret: 'ivtXHYeQyqatzHIeKJVGUujxhKPTsoQClJIBLxoI',
+
   // urlBase: 'http://localhost:8000/api',
   // urlLogin: 'http://localhost:8000/oauth/token',
   // urlLogout: 'http://localhost:8000/oauth/revoke_token',
   // client_Secret: 'fFO8qar6hZr1bY6UDHHKuOKHnrVeE7flssIfJUvz',
+
   client_id: 2,
   grant_type: 'password',
   verbo_get: 'GET',
