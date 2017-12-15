@@ -41,12 +41,6 @@ export class EmpresaComponent implements OnInit {
 
   ngOnInit() {
 
-    MenuService.listarEmpresas.subscribe( empresas => {
-      this.empresas = empresas;
-
-      console.log(this.empresas);
-    });
-
     this.mensagem = new MsgAlertModel();
     this.getEmpresas();
 

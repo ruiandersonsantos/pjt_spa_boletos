@@ -4,7 +4,7 @@ export const environment = {
    urlBase: 'http://www.apiboleto.dtconsultoria.com.br/api',
    urlLogin: 'http://www.apiboleto.dtconsultoria.com.br/oauth/token',
    urlLogout: 'http://www.apiboleto.dtconsultoria.com.br/oauth/revoke_token',
-   client_Secret: 'ivtXHYeQyqatzHIeKJVGUujxhKPTsoQClJIBLxoI',
+   client_Secret: '6PXryeTaeBm6koNFD495C335HdBBHD9iIJg9qVnK',
 
   // urlBase: 'http://localhost:8000/api',
   // urlLogin: 'http://localhost:8000/oauth/token',

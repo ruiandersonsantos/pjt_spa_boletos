@@ -34,30 +34,11 @@ export class MenuComponent implements OnInit {
   }
 
   clicouEmpresas(){
-    this.menuservice.getEmpresaMenu()
-        .then(response => {
-
-            this.router.navigate(['empresa']);
-
-
-        }).catch( error => {
-      // colocar msg de erro na tela
-    });
-
-
+    this.router.navigate(['empresa']);
   }
 
   clicouUsuarios(){
-    this.menuservice.getEmpresaMenu()
-        .then(response => {
-
-          this.router.navigate(['usuario']);
-
-
-        }).catch( error => {
-      // colocar msg de erro na tela
-    });
-
+    this.router.navigate(['usuario']);
 
   }
 

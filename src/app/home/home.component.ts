@@ -24,9 +24,7 @@ export class HomeComponent implements OnInit {
   );
 
   ngOnInit() {
-    MenuService.listarHome.subscribe( texto => {
-      console.log(texto);
-    });
+
 
   }
 

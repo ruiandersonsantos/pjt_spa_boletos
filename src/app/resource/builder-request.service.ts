@@ -21,11 +21,11 @@ export class BuilderRequestService {
   }
 
   builder(rota: string, verboHttp: string, obj: any): Promise<any>{
+      this.token = this.jwtToken.token;
 
-    this.token = this.jwtToken.token;
+      this.headers = new Headers({'Authorization': 'Bearer ' + this.token});
+      this. headers.set('Content-Type', 'application/json');
 
-    this.headers = new Headers({'Authorization': 'Bearer ' + this.token});
-    this. headers.set('Content-Type', 'application/json');
 
 
     if( this.srvGlobal.getVerboGET() === verboHttp){
