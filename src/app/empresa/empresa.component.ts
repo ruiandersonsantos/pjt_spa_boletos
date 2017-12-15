@@ -63,7 +63,7 @@ export class EmpresaComponent implements OnInit {
     e.preventDefault();
     this.router.navigate(['empresa/editar'], {queryParams: empresa});
   }
-
+  // montando mensagem
   private montaMensagem() {
     this.mensagem.exibirmsg = this.activatedRoute.snapshot.queryParams['exibirmsg'];
     this.mensagem.tipo = this.activatedRoute.snapshot.queryParams['tipo'];
